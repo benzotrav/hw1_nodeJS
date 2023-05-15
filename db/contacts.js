@@ -33,8 +33,9 @@ const removeContact = async (id) => {
 
 const addContact=async(name, email, phone)=> {
     const contacts = await allContacts();
-    const id = Date.now();
-    const newContact = {
+    const {v4 : uuidv4} = require("uuid");
+    const id = uuidv4();
+        const newContact = {
         id,
         name,
         email,
